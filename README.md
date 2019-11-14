@@ -84,6 +84,18 @@ accountInteractor.getAccount(context.getString(R.string.CLIENT_ID),
 
 ## Работа с контентом 
 
+Прежде всего необходимо инициализировать базу данных библиотеки в классе Application, передав в качестве параметров Context и имя файла базы Realm
+
+```java
+    StoryContent.init(this, "storyclm.realm");
+```
+
+Чтобы удалить весь контент необходимо вызвать методы removeContent()
+
+```java
+    StoryContent.removeContent();
+```
+
 ##### Загрузка презентаций 
 Загрузка доступных пользователю презентаций
 осуществляется с помошью интерактора PresentationInteractor, который
