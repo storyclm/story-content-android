@@ -82,19 +82,42 @@ accountInteractor.getAccount(context.getString(R.string.CLIENT_ID),
                             context.getString(R.string.GRAND_TYPE))
 ```
 
-## Работа с контентом 
+## Работа с контентом
 
-Прежде всего необходимо инициализировать базу данных библиотеки в классе Application, передав в качестве параметров Context и имя файла базы Realm
+Прежде всего необходимо инициализировать библиотеку в классе Application,  
+передав в качестве параметра реализацию интерфейса ExternalDependencyProvider.
 
-```java
-    StoryContent.init(this, "storyclm.realm");
+```kotlin
+    private val dependencyProvider = object : ExternalDependencyProvider {
+        override fun provideContext(): Context {
+            return applicationContext
+        }
+
+        override fun provideIoTConfig(): IoTConfig? {
+            return IoTConfig( ... )
+        }
+
+        override fun provideAuthApi(): AuthRetrofitService {
+            ...
+        }
+
+        override fun providePresentationApi(): PresentationRetrofitService {
+            ...
+        }
+
+        override fun provideStoryRealmFilename(): String {
+            return "storyclm.realm"
+        }
+
+        override fun provideAppParameters(): AppParametersEntity {
+            return AppParametersEntity("YourAppName", "1.0")
+        }
+    }
+
+    StoryContent.init(dependencyProvider)
 ```
 
-Чтобы удалить весь контент необходимо вызвать методы removeContent()
-
-```java
-    StoryContent.removeContent();
-```
+Передаваемое имя приложения не должно содержать символов вне US-ASCII.
 
 ##### Загрузка презентаций 
 Загрузка доступных пользователю презентаций
