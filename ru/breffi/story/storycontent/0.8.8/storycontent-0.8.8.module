@@ -268,10 +268,10 @@
           "name": "storycontent-0.8.8.aar",
           "url": "storycontent-0.8.8.aar",
           "size": 746725,
-          "sha512": "0312d4bdf129df7635398d564e5876f8da1df4d366c854951eaa2d31080b0df2f0b3f8f1f4a3088dd1099b602181a81bd42f11252292322cedb5186539f79826",
-          "sha256": "88c5ba95fa3b3c78a205ac8fa9ff7f91d66ba57780bbd142a477d7fdaa87eeb2",
-          "sha1": "33657f01c29adc1f8d55e473bc3a1ad48aa9d36b",
-          "md5": "67fa1b0b18b1c1f5626fefe3604db8e0"
+          "sha512": "05bc84136b0773740f0dde6fd6875fb978b4b17c5f1b413d1cce247a73ba82c9e51cdc2138f5ba50abcaaa4ff15df2cb361400573bf37d38a66d5aaa9126fbc2",
+          "sha256": "24fca93d35448ae59304e52965ed9af86c784053222f7fb5dcb960855d95355f",
+          "sha1": "049278f3c193f675f8012a48eeb0c7436bcd27a7",
+          "md5": "9f9d3d67656cfdf72f8f44d49b646ef1"
         }
       ]
     }
